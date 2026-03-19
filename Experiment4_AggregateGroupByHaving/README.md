@@ -37,124 +37,155 @@ HAVING condition;
 ```
 
 **Question 1**
---
--- Paste Question 1 here
+
+![alt text](Questions/image-1.png)
 
 ```sql
--- Paste your SQL code below for Question 1
+SELECT SUM(workhour) AS "Total working hours"
+FROM employee1;
 ```
 
 **Output:**
 
-![Output1](output.png)
+![alt text](Outputs/image-1.png)
 
 **Question 2**
----
--- Paste Question 2 here
+
+![alt text](Questions/image-2.png)
 
 ```sql
--- Paste your SQL code below for Question 2
+SELECT AVG(LENGTH(email)) AS "avg_email_length"
+FROM customer;
 ```
 
 **Output:**
 
-![Output2](output.png)
+![alt text](Outputs/image-2.png)
 
 **Question 3**
----
--- Paste Question 3 here
+
+![alt text](Questions/image-3.png)
 
 ```sql
--- Paste your SQL code below for Question 3
+SELECT name,LENGTH(name) as length
+FROM customer
+ORDER BY LENGTH(name) DESC
+LIMIT 1;
 ```
 
 **Output:**
 
-![Output3](output.png)
+![alt text](Outputs/image-3.png)
 
 **Question 4**
----
--- Paste Question 4 here
+
+![alt text](Questions/image-4.png)
 
 ```sql
--- Paste your SQL code below for Question 4
+SELECT PatientID,COUNT(*) AS "TotalMedications"
+FROM Prescriptions
+GROUP BY PatientID
+ORDER BY PatientID;
 ```
 
 **Output:**
 
-![Output4](output.png)
+![alt text](Outputs/image-4.png)
 
 **Question 5**
----
--- Paste Question 5 here
+
+![alt text](Questions/image-5.png)
 
 ```sql
--- Paste your SQL code below for Question 5
+SELECT strftime('%Y',ValidityPeriod) AS ValidityYear,COUNT(*) AS TotalPatients
+FROM Insurance
+WHERE ValidityPeriod IS NOT NULL
+GROUP BY ValidityYear
+ORDER BY ValidityYear;
 ```
 
 **Output:**
 
-![Output5](output.png)
+![alt text](Outputs/image-5.png)
 
 **Question 6**
----
--- Paste Question 6 here
+
+![alt text](Questions/image-6.png)
 
 ```sql
--- Paste your SQL code below for Question 6
+SELECT DoctorID,COUNT(DISTINCT RecordID) AS TotalRecords
+FROM MedicalRecords
+GROUP BY DoctorID
+ORDER BY DoctorID;
 ```
 
 **Output:**
 
-![Output6](output.png)
+![alt text](Outputs/image-6.png)
 
 **Question 7**
----
--- Paste Question 7 here
+
+![alt text](Questions/image-7.png)
 
 ```sql
--- Paste your SQL code below for Question 7
+SELECT age AS "age",MIN(income) AS "Income"
+FROM employee
+GROUP BY age
+HAVING MIN(income) < 1000000
+ORDER BY age;
 ```
 
 **Output:**
 
-![Output7](output.png)
+![alt text](Outputs/image-7.png)
 
 **Question 8**
----
--- Paste Question 8 here
+
+![alt text](Questions/image-8.png)
 
 ```sql
--- Paste your SQL code below for Question 8
+SELECT jdate,MIN(workhour)
+FROM employee1
+GROUP BY jdate
+HAVING MIN(workhour) < 10
+ORDER BY jdate
 ```
 
 **Output:**
 
-![Output8](output.png)
+![alt text](Outputs/image-8.png)
 
 **Question 9**
----
--- Paste Question 9 here
+
+![alt text](Questions/image-9.png)
 
 ```sql
--- Paste your SQL code below for Question 9
+SELECT category_id,SUM(price) AS "Total_Cost"
+FROM products
+GROUP BY category_id
+HAVING SUM(price) > 50
+ORDER BY category_id;
 ```
 
 **Output:**
 
-![Output9](output.png)
+![alt text](Outputs/image-9.png)
 
 **Question 10**
----
--- Paste Question 10 here
+
+![alt text](Questions/image-10.png)
 
 ```sql
--- Paste your SQL code below for Question 10
+SELECT age,AVG(income)
+FROM employee
+GROUP BY age
+HAVING AVG(income) BETWEEN 300000 AND 500000
+ORDER BY age;
 ```
 
 **Output:**
 
-![Output10](output.png)
+![alt text](Outputs/image-10.png)
 
 
 ## RESULT
