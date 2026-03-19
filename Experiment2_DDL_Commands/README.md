@@ -104,124 +104,168 @@ CREATE TABLE Table_Name (
 ```
 
 **Question 1**
---
--- Paste Question 1 here
+
+![Question-1](Questions/image-1.png)
 
 ```sql
--- Paste your SQL code below for Question 1
+CREATE TABLE Department(
+    DepartmentID INT PRIMARY KEY,
+    DepartmentName TEXT NOT NULL UNIQUE,
+    Location TEXT
+);
 ```
 
 **Output:**
 
-![Output1](output.png)
+![Output-1](Outputs/image-1.png)
 
 **Question 2**
----
--- Paste Question 2 here
+
+![Question-2](Questions/image-2.png)
 
 ```sql
--- Paste your SQL code below for Question 2
+CREATE TABLE Shipments(
+    ShipmentID INTEGER PRIMARY KEY,
+    ShipmentDate DATE,
+    SupplierID INTEGER NOT NULL,
+    OrderID INTEGER NOT NULL,
+    FOREIGN KEY (SupplierID) REFERENCES Suppliers(SupplierID),
+    FOREIGN KEY (OrderID) REFERENCES Orders(OrderID)
+);
 ```
 
 **Output:**
 
-![Output2](output.png)
+![Output-2](Outputs/image-2.png)
 
 **Question 3**
----
--- Paste Question 3 here
+
+![Question-3](Questions/image-3.png)
 
 ```sql
--- Paste your SQL code below for Question 3
+CREATE TABLE ProjectAssignments(
+    AssignmentID INTEGER PRIMARY KEY,
+    EmployeeID INTEGER NOT NULL,
+    ProjectID INTEGER NOT NULL,
+    AssignmentDate DATE NOT NULL,
+    FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID),
+    FOREIGN KEY (ProjectID) REFERENCES Projects(ProjectID)
+);
 ```
 
 **Output:**
 
-![Output3](output.png)
+![Output-3](Outputs/image-3.png)
 
 **Question 4**
----
--- Paste Question 4 here
+
+![Question-4](Questions/image-4.png)
 
 ```sql
--- Paste your SQL code below for Question 4
+INSERT INTO Customers 
+VALUES("301","Michael Jordan","123 Maple St","Chicago",60616);
 ```
 
 **Output:**
 
-![Output4](output.png)
+![Output-4](Outputs/image-4.png)
 
 **Question 5**
----
--- Paste Question 5 here
+
+![Question-5](Questions/image-5.png)
 
 ```sql
--- Paste your SQL code below for Question 5
+CREATE TABLE contacts(
+    contact_id INTEGER PRIMARY KEY,
+    first_name TEXT NOT NULL,
+    last_name TEXT NOT NULL,
+    email TEXT,
+    phone TEXT NOT NULL,
+    CHECK(LENGTH(phone)>=10)
+);
 ```
 
 **Output:**
 
-![Output5](output.png)
+![Output-5](Outputs/image-5.png)
 
 **Question 6**
----
--- Paste Question 6 here
+
+![Question-6](Questions/image-6.png)
 
 ```sql
--- Paste your SQL code below for Question 6
+CREATE TABLE orders(
+    ord_id TEXT NOT NULL,
+    item_id TEXT NOT NULL,
+    ord_date DATE,
+    ord_qty INTEGER,
+    cost INTEGER,
+    PRIMARY KEy(item_id,ord_date)
+    CHECK(LENGTH(ord_id)=4)
+);
 ```
 
 **Output:**
 
-![Output6](output.png)
+![Output-6](Outputs/image-6.png)
 
 **Question 7**
----
--- Paste Question 7 here
+
+![Question-7](Questions/image-7.png)
 
 ```sql
--- Paste your SQL code below for Question 7
+ALTER TABLE Companies RENAME COLUMN name TO first_name;
+
+ALTER TABLE Companies ADD COLUMN mobilenumber number;
+
+ALTER TABLE Companies ADD COLUMN DOB Date;
+
+ALTER TABLE Companies ADD COLUMN State varchar(30);
 ```
 
 **Output:**
 
-![Output7](output.png)
+![Output-7](Outputs/image-7.png)
 
 **Question 8**
----
--- Paste Question 8 here
+
+![Question-8](Questions/image-8.png)
 
 ```sql
--- Paste your SQL code below for Question 8
+ALTER TABLE Student_details
+ADD COLUMN email TEXT NOT NULL DEFAULT 'Invalid';
 ```
 
 **Output:**
 
-![Output8](output.png)
+![Output-8](Outputs/image-8.png)
 
 **Question 9**
----
--- Paste Question 9 here
+
+![Question-9](Questions/image-9.png)
+
 
 ```sql
--- Paste your SQL code below for Question 9
+INSERT INTO Student_details
+SELECT * FROM Archived_students;
 ```
 
 **Output:**
 
-![Output9](output.png)
+![Output-9](Outputs/image-9.png)
 
 **Question 10**
----
--- Paste Question 10 here
+
+![Question-10](Questions/image-10.png)
 
 ```sql
--- Paste your SQL code below for Question 10
+INSERT INTO Employee (EmployeeID,Name,Position,Department,Salary)
+VALUES("001","Sarah Parker","Manager","HR",60000);
 ```
 
 **Output:**
 
-![Output10](output.png)
+![Output-10](Outputs/image-10.png)
 
 
 ## RESULT
