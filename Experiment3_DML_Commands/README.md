@@ -46,124 +46,146 @@ Used to retrieve records from a table.
 SELECT column1, column2 FROM table_name WHERE condition;
 ```
 **Question 1**
---
--- Paste Question 1 here
+
+![alt text](Questions/image-1.png)
 
 ```sql
--- Paste your SQL code below for Question 1
+DELETE FROM Customer
+WHERE LENGTH(CUST_NAME) = 6;
 ```
 
 **Output:**
 
-![Output1](output.png)
+![alt text](Outputs/image-1.png)
 
 **Question 2**
----
--- Paste Question 2 here
+
+![alt text](Questions/image-2.png)
 
 ```sql
--- Paste your SQL code below for Question 2
+DELETE FROM Customer
+WHERE (GRADE > 2 AND PAYMENT_AMT < (SELECT AVG(PAYMENT_AMT) FROM Customer)) OR OUTSTANDING_AMT > 8000;
 ```
 
 **Output:**
 
-![Output2](output.png)
+![alt text](Outputs/image-2.png)
 
 **Question 3**
----
--- Paste Question 3 here
+
+![alt text](Questions/image-3.png)
 
 ```sql
--- Paste your SQL code below for Question 3
+UPDATE purchases
+SET per_unit_price = 25 , total_price = quantity * 25
+WHERE purchase_date = '2022-08-15' AND product_id = 12;
 ```
 
 **Output:**
 
-![Output3](output.png)
+![alt text](Outputs/image-3.png)
 
 **Question 4**
----
--- Paste Question 4 here
+
+![alt text](Questions/image-4.png)
 
 ```sql
--- Paste your SQL code below for Question 4
+UPDATE PRODUCTS
+SET reorder_lvl = 40
+WHERE category = 'Grocery';
 ```
 
 **Output:**
 
-![Output4](output.png)
+![alt text](Outputs/image-4.png)
 
 **Question 5**
----
--- Paste Question 5 here
+
+![alt text](Questions/image-5.png)
 
 ```sql
--- Paste your SQL code below for Question 5
+SELECT * FROM EmployeeInfo
+WHERE EmpLname LIKE '%A' AND LENGTH(EmpLname) = 5;
 ```
 
 **Output:**
 
-![Output5](output.png)
+![alt text](Outputs/image-5.png)
 
 **Question 6**
----
--- Paste Question 6 here
+
+![alt text](Questions/image-6.png)
 
 ```sql
--- Paste your SQL code below for Question 6
+SELECT salesman_id,name,city,commission
+FROM salesman
+WHERE city NOT IN ('Paris','Rome');
 ```
 
 **Output:**
 
-![Output6](output.png)
+![alt text](Outputs/image-6.png)
 
 **Question 7**
----
--- Paste Question 7 here
+
+![alt text](Questions/image-7.png)
 
 ```sql
--- Paste your SQL code below for Question 7
+UPDATE Suppliers
+SET address = '58 Lakeview, Magnolia'
+WHERE supplier_id = 5;
 ```
 
 **Output:**
 
-![Output7](output.png)
+![alt text](Outputs/image-7.png)
 
 **Question 8**
----
--- Paste Question 8 here
+
+![alt text](Questions/image-8.png)
 
 ```sql
--- Paste your SQL code below for Question 8
+SELECT 
+    ename,
+    strftime('%d-%m-%Y',hiredate) AS HireDateFormatted
+FROM emp;
 ```
 
 **Output:**
 
-![Output8](output.png)
+![alt text](Outputs/image-8.png)
+
 
 **Question 9**
----
--- Paste Question 9 here
+
+![alt text](Questions/image-9.png)
 
 ```sql
--- Paste your SQL code below for Question 9
+DELETE FROM Customer
+WHERE GRADE = 3 AND CUST_NAME LIKE '%BBB%' AND PAYMENT_AMT > 2000;
 ```
 
 **Output:**
 
-![Output9](output.png)
+![alt text](Outputs/image-9.png)
 
 **Question 10**
----
--- Paste Question 10 here
+
+![alt text](Questions/image-10.png)
 
 ```sql
--- Paste your SQL code below for Question 10
+SELECT
+    product_id,
+    original_price,
+    discount_percentage,
+    (original_price - (original_price * discount_percentage)) AS discounted_price
+FROM products
+WHERE original_price - (original_price * discount_percentage) BETWEEN 100 AND 250;
 ```
 
 **Output:**
 
-![Output10](output.png)
+![alt text](Outputs/image-10.png)
 
 ## RESULT
 Thus, the SQL queries to implement DML commands have been executed successfully.
