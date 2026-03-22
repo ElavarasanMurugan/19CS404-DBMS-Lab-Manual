@@ -37,125 +37,160 @@ DROP VIEW view_name;
 ```
 
 **Question 1**
---
--- Paste Question 1 here
+
+![alt text](Questions/image-1.png)
 
 ```sql
--- Paste your SQL code below for Question 1
+SELECT * FROM customer
+WHERE city <> (SELECT city FROM customer WHERE id = (SELECT MAX(id) FROM customer));
 ```
 
 **Output:**
 
-![Output1](output.png)
+![alt text](Outputs/image-1.png)
 
 **Question 2**
----
--- Paste Question 2 here
+
+![alt text](Questions/image-2.png)
 
 ```sql
--- Paste your SQL code below for Question 2
+SELECT *
+FROM CUSTOMERS
+WHERE AGE < 30;
 ```
 
 **Output:**
 
-![Output2](output.png)
+![alt text](Outputs/image-2.png)
 
 **Question 3**
----
--- Paste Question 3 here
+
+![alt text](Questions/image-3.png)
 
 ```sql
--- Paste your SQL code below for Question 3
+SELECT o.ord_no,o.purch_amt,o.ord_date,o.customer_id,o.salesman_id
+FROM Orders o
+JOIN Salesman s ON o.salesman_id = s.salesman_id
+WHERE s.name = "Paul Adam";
 ```
 
 **Output:**
 
-![Output3](output.png)
+![alt text](Outputs/image-3.png)
 
 **Question 4**
----
--- Paste Question 4 here
+
+![alt text](Questions/image-4.png)
 
 ```sql
--- Paste your SQL code below for Question 4
+SELECT name 
+FROM customer
+WHERE phone IN(
+    SELECT phone 
+    FROM customer
+    GROUP BY phone
+    HAVING COUNT(phone) = 1
+);
 ```
 
 **Output:**
 
-![Output4](output.png)
+![alt text](Outputs/image-4.png)
 
 **Question 5**
----
--- Paste Question 5 here
+
+![alt text](Questions/image-5.png)
 
 ```sql
--- Paste your SQL code below for Question 5
+SELECT
+    o.ord_no,
+    o.purch_amt,
+    o.ord_date,
+    o.customer_id,
+    o.salesman_id
+FROM ORDERS o
+JOIN SALESMAN s ON o.salesman_id = s.salesman_id
+WHERE s.city = "New York";
 ```
 
 **Output:**
 
-![Output5](output.png)
+![alt text](Outputs/image-5.png)
 
 **Question 6**
----
--- Paste Question 6 here
+
+![alt text](Questions/image-6.png)
 
 ```sql
--- Paste your SQL code below for Question 6
+SELECT *
+FROM Medications
+WHERE dosage = (SELECT MIN(dosage) FROM Medications);
 ```
 
 **Output:**
 
-![Output6](output.png)
+![alt text](Outputs/image-6.png)
 
 **Question 7**
----
--- Paste Question 7 here
+
+![alt text](Questions/image-7.png)
 
 ```sql
--- Paste your SQL code below for Question 7
+SELECT *
+FROM CUSTOMERS
+WHERE (ADDRESS = "Delhi" AND AGE < 30)
+ORDER BY ID;
 ```
 
 **Output:**
 
-![Output7](output.png)
+![alt text](Outputs/image-7.png)
 
 **Question 8**
----
--- Paste Question 8 here
+
+![alt text](Questions/image-8.png)
 
 ```sql
--- Paste your SQL code below for Question 8
+SELECT *
+FROM ORDERS
+WHERE purch_amt > (SELECT AVG(purch_amt) FROM ORDERS WHERE ord_date = '2012-10-10');
 ```
 
 **Output:**
 
-![Output8](output.png)
+![alt text](Outputs/image-8.png)
 
 **Question 9**
----
--- Paste Question 9 here
+
+![alt text](Questions/image-9.png)
 
 ```sql
--- Paste your SQL code below for Question 9
+SELECT * 
+FROM Medications
+WHERE dosage = (SELECT MAX(dosage) FROM Medications);
 ```
 
 **Output:**
 
-![Output9](output.png)
+![alt text](Outputs/image-9.png)
 
 **Question 10**
----
--- Paste Question 10 here
+
+![alt text](Questions/image-10.png)
 
 ```sql
--- Paste your SQL code below for Question 10
+SELECT *
+FROM GRADES g
+WHERE grade = (
+    SELECT MIN(grade) 
+    FROM GRADES
+    WHERE subject = g.subject
+);
 ```
 
 **Output:**
 
-![Output10](output.png)
-
+![alt text](Outputs/image-10.png)
 
 ## RESULT
 Thus, the SQL queries to implement subqueries and views have been executed successfully.
