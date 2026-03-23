@@ -127,7 +127,7 @@ A popular restaurant wants to manage reservations, orders, and billing.
 
 ### ER Diagram:
 
-![alt text](Diagrams/image-3.png)
+![alt text](Diagrams/image--3.png)
 
 
 ### Entities and Attributes
@@ -162,7 +162,6 @@ A popular restaurant wants to manage reservations, orders, and billing.
 - A bill is generated per reservation, and handled by a specific waiter.
 - Cardinality is mostly one-to-many from customer to reservation/orders, and many-to-many from orders to dishes.
 - All data entities and relationships reflect the diagram structure and relational schema.
-
 
 ## Instructions for Students
 
